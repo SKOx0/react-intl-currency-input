@@ -1,12 +1,12 @@
 const path = require('path');
 const opn = require('opn');
-const gzippo = require('gzippo');
+const compression = require('compression');
 const express = require('express');
 const morgan = require('morgan');
 const app = express();
 
 app.use(morgan('dev'));
-app.use(gzippo.staticGzip(path.resolve(path.join(__dirname, "/dist"))));
+app.use(compression());
 
 app.listen({
   host: "localhost",
