@@ -74,7 +74,7 @@ var IntlCurrencyInput = function (_Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var value = this.props.defaultValue || 0;
+      var value = this.props.value || this.props.defaultValue || 0;
       this.setMaskedValue(value);
     }
   }, {
@@ -256,7 +256,8 @@ IntlCurrencyInput.propTypes = {
   onBlur: _propTypes.func,
   onFocus: _propTypes.func,
   onKeyPress: _propTypes.func,
-  max: _propTypes.number
+  max: _propTypes.number,
+  value: _propTypes.any
 };
 
 IntlCurrencyInput.defaultProps = {

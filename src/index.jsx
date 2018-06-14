@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import ReactDOM from "react-dom"
-import { string, func, object, number, bool } from "prop-types"
+import { string, func, object, number, bool, any } from "prop-types"
 
 import formatCurrency from "./format-currency"
 
@@ -36,7 +36,7 @@ class IntlCurrencyInput extends Component {
   }
 
   componentDidMount() {
-    const value = this.props.defaultValue || 0
+    const value =  this.props.value || this.props.defaultValue || 0
     this.setMaskedValue(value)
   }
 
@@ -177,6 +177,7 @@ IntlCurrencyInput.propTypes = {
   onFocus: func,
   onKeyPress: func,
   max: number,
+  value: any
 }
 
 IntlCurrencyInput.defaultProps = {
